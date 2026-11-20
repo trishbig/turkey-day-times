@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f0e5">
+  <title>The Turkey Day Times</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&family=Courier+Prime&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f5f0e5;
+      --ink: #25231f;
+      --burgundy: #743b40;
+      --gold: #a1844d;
+      --line: #b9ad98;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: #ded8cb;
+      color: var(--ink);
+      font-family: "Libre Baskerville", Georgia, serif;
+      line-height: 1.7;
+    }
+
+    .newspaper {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 34px;
+      background: var(--paper);
+      box-shadow: 0 5px 30px #0002;
+    }
+
+    .eyebrow {
+      font-family: "Courier Prime", monospace;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    header {
+      text-align: center;
+      border-top: 5px double var(--ink);
+      border-bottom: 5px double var(--ink);
+      padding: 22px 0;
+    }
+
+    h1 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(42px, 8vw, 82px);
+      line-height: 1;
+      margin: 12px 0;
+      letter-spacing: -3px;
+    }
+
+    .subtitle {
+      font-family: "Courier Prime", monospace;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    .edition {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--ink);
+      padding: 12px 0;
+      font-family: "Courier Prime", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+    }
+
+    nav a {
+      color: var(--burgundy);
+      text-decoration: none;
+      font-family: "Courier Prime", monospace;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    .lead {
+      text-align: center;
+      padding: 55px 15px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .lead h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.15;
+      margin: 12px auto;
+      max-width: 850px;
+    }
+
+    .lead p {
+      max-width: 650px;
+      margin: 18px auto;
+    }
+
+    .section {
+      padding: 42px 0;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 75px;
+    }
+
+    .section-heading {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 34px;
+      text-align: center;
+      margin: 0 0 8px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: var(--burgundy);
+      font-style: italic;
+      margin: 0 0 28px;
+    }
+
+    .placeholder {
+      border: 1px dashed var(--line);
+      padding: 30px;
+      text-align: center;
+      color: #716b60;
+      font-style: italic;
+    }
+
+    .editor-note {
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+    }
+
+    footer {
+      padding: 25px 0 5px;
+      text-align: center;
+      font-family: "Courier Prime", monospace;
+      font-size: 12px;
+    }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--burgundy);
+    }
+
+    @media (max-width: 600px) {
+      .newspaper {
+        margin: 0;
+        padding: 20px 16px;
+      }
+
+      nav { gap: 10px 14px; }
+
+      nav a { font-size: 11px; }
+
+      .edition { font-size: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="newspaper" id="top">
+
+    <header>
+      <div class="eyebrow">A Family Publication</div>
+      <h1>The Turkey Day Times</h1>
+      <div class="subtitle">Family • Gratitude • Good Times</div>
+    </header>
+
+    <div class="edition">
+      <span>Thanksgiving Edition</span>
+      <span>November 2026</span>
+      <span>Special Family Issue</span>
+    </div>
+
+    <nav aria-label="Newspaper sections">
+      <a href="#thankful">Gratitude</a>
+      <a href="#shoutouts">Shoutouts</a>
+      <a href="#new-arrivals">New Arrivals</a>
+      <a href="#album">Family Album</a>
+      <a href="#editor">Editor's Desk</a>
+      <a href="#entertainment">Games & Fun</a>
+    </nav>
+
+    <section class="lead">
+      <div class="eyebrow">The Thanksgiving Edition</div>
+      <h2>A Reason to Be Thankful</h2>
+      <p>
+        A little something to celebrate the people, memories,
+        moments and stories that make this family ours.
+      </p>
+    </section>
+
+    <section class="section" id="thankful">
+      <h2 class="section-heading">A Reason to Be Thankful</h2>
+      <p class="section-intro">A few things worth celebrating.</p>
+      <div class="placeholder">
+        Your gratitude feature will live here.
+      </div>
+    </section>
+
+    <section class="section" id="shoutouts">
+      <h2 class="section-heading">Family Shoutouts</h2>
+      <p class="section-intro">Giving credit where credit is due.</p>
+      <div class="placeholder">
+        Family shoutouts and special mentions go here.
+      </div>
+    </section>
+
+    <section class="section" id="new-arrivals">
+      <h2 class="section-heading">Our Newest Little Headlines</h2>
+      <p class="section-intro">Two new arrivals. Plenty of reasons to smile.</p>
+      <div class="placeholder">
+        Introductions and photos of our newest family members go here.
+      </div>
+    </section>
+
+    <section class="section" id="album">
+      <h2 class="section-heading">The Family Album</h2>
+      <p class="section-intro">A picture is worth a thousand family stories.</p>
+      <div class="placeholder">
+        Family photographs and captions will go here.
+      </div>
+    </section>
+
+    <section class="section" id="editor">
+      <h2 class="section-heading">From the Editor's Desk</h2>
+      <p class="section-intro">A few words before you go.</p>
+      <div class="editor-note placeholder">
+        Your editor's note will go here.
+      </div>
+    </section>
+
+    <section class="section" id="entertainment">
+      <h2 class="section-heading">The Entertainment Desk</h2>
+      <p class="section-intro">Read all about it. Then prove what you know.</p>
+      <div class="placeholder">
+        Crossword, word search and family word games will go here.
+      </div>
+    </section>
+
+    <footer>
+      THE TURKEY DAY TIMES • THANKSGIVING 2026
+      <br>
+      <a class="back-top" href="#top">Back to the top ↑</a>
+    </footer>
+
+  </main>
+</body>
+</html>
