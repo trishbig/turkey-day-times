@@ -1,204 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#f5f0e5">
 <title>The Turkey Day Times</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&family=Courier+Prime&display=swap" rel="stylesheet">
-<style>
-:root{--paper:#f5f0e5;--ink:#25231f;--burgundy:#743b40;--gold:#a1844d;--line:#b9ad98}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#ded8cb;color:var(--ink);font-family:"Libre Baskerville",Georgia,serif;line-height:1.7}
-.newspaper{max-width:1100px;margin:30px auto;padding:34px;background:var(--paper);box-shadow:0 5px 30px #0002}
-header{text-align:center;border-top:5px double var(--ink);border-bottom:5px double var(--ink);padding:22px 0}
-.eyebrow,.subtitle,.edition,nav,.kicker,footer{font-family:"Courier Prime",monospace;text-transform:uppercase;letter-spacing:1.5px}
-.eyebrow{font-size:12px}h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(42px,8vw,82px);line-height:1;margin:12px 0;letter-spacing:-3px}
-.subtitle{font-size:13px}.edition{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding:12px 0;font-size:12px}
-nav{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line);padding:12px 0;display:flex;justify-content:center;flex-wrap:wrap;gap:10px 20px}
-nav a{color:var(--burgundy);text-decoration:none;font-size:13px;font-weight:bold}nav a:hover{text-decoration:underline}
-.lead{text-align:center;padding:48px 15px;border-bottom:1px solid var(--line)}.lead h2{font:clamp(34px,6vw,58px)/1.15 "Playfair Display",Georgia,serif;margin:12px auto;max-width:850px}.lead p{max-width:680px;margin:18px auto}
-.section{padding:42px 0;border-bottom:1px solid var(--line);scroll-margin-top:75px}.section-heading{text-align:center;font:34px "Playfair Display",Georgia,serif;margin:0 0 8px}.section-intro{text-align:center;color:var(--burgundy);font-style:italic;margin:0 0 28px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px}.entry{padding:18px 0;border-bottom:1px solid var(--line)}.entry h3{font: bold 14px "Courier Prime",monospace;letter-spacing:1px;color:var(--burgundy);margin:0 0 8px;text-transform:uppercase}.entry p{margin:0}
-.editor-note{max-width:740px;margin:auto;text-align:center}.editor-note p{margin:12px 0}
-.album{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.photo{margin:0;border:1px solid var(--line);padding:10px;background:#fbf8f0}.photo img{display:block;width:100%;height:250px;object-fit:cover;background:#e7dfd0}.photo figcaption{font-size:13px;margin-top:9px}.photo .credit{font:12px "Courier Prime",monospace;color:var(--burgundy);margin-top:5px}
-.announcement{display:flex;gap:24px;align-items:center;max-width:750px;margin:auto;padding:20px;border:1px solid var(--line)}.announcement img{width:180px;max-width:40%;height:180px;object-fit:cover}
-.callout{border:1px solid var(--line);padding:22px;text-align:center;max-width:760px;margin:auto}.callout a,.essay-link{color:var(--burgundy);font-weight:bold}
-button{font: bold 13px "Courier Prime",monospace;background:var(--burgundy);color:white;border:0;padding:11px 16px;cursor:pointer}button:hover{opacity:.9}
-.wordsearch-wrap{overflow-x:auto}.wordsearch{display:grid;grid-template-columns:repeat(22, minmax(22px,1fr));gap:2px;max-width:660px;margin:20px auto}.letter{aspect-ratio:1;border:1px solid #c8bda9;background:#fffdf7;font: bold 14px "Courier Prime",monospace;display:grid;place-items:center;cursor:pointer;user-select:none}.letter.selected{background:#e5c98d}.letter.found{background:#c8d6bd}
-.wordbank{columns:3;max-width:700px;margin:20px auto;padding-left:24px;font:13px "Courier Prime",monospace}.wordbank li.found{text-decoration:line-through;color:#65805a}
-.clues{max-width:850px;margin:auto;columns:2;column-gap:40px}.clues li{break-inside:avoid;margin:0 0 10px}
-.crossword-note{text-align:center;font-size:14px;color:#655d50}
-footer{padding:25px 0 5px;text-align:center;font-size:12px}
-@media(max-width:700px){.newspaper{margin:0;padding:20px 16px}.grid,.album{grid-template-columns:1fr}.clues{columns:1}.wordbank{columns:2}.edition{font-size:10px}.announcement{align-items:flex-start}.photo img{height:auto;max-height:420px}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="newspaper" id="top">
-<header>
-<div class="eyebrow">A Family Publication</div>
-<h1>The Turkey Day Times</h1>
-<div class="subtitle">Family • Gratitude • Good Times</div>
-</header>
-<div class="edition"><span>Thanksgiving Edition</span><span>November 2026</span><span>One family, many stories</span></div>
+<header class="masthead"><div class="eyebrow">A Family Publication</div><h1>The Turkey Day Times</h1><div class="subtitle">Family • Gratitude • Good Times</div></header>
+<div class="edition"><span>Thanksgiving Edition</span><span>November 2026</span><span>Special Family Issue</span></div>
 <nav aria-label="Newspaper sections">
-<a href="#thankful">A Reason to Be Thankful</a><a href="#shoutouts">Shoutouts</a><a href="#moments">A Year in Moments</a><a href="#album">Family Album</a><a href="#new-arrivals">New Arrivals</a><a href="#games">Games</a><a href="#editor">From the Editor</a>
+<a href="#thankful">Gratitude</a><a href="#shoutouts">Shoutouts</a><a href="#moments">A Year in Moments</a><a href="#new-arrivals">New Arrivals</a><a href="#album">Family Album</a><a href="#editor">Editor's Desk</a><a href="#entertainment">Games &amp; Fun</a>
 </nav>
-<section class="lead">
-<div class="eyebrow">The Thanksgiving Edition · 2026</div>
-<h2>A reason to be thankful. A reason to gather.</h2>
-<p>A little family news, a few memories from the year, and some games to enjoy together. Take a look around, find your people, and have some fun.</p>
+<section class="lead"><div class="eyebrow">The Thanksgiving Edition</div><h2>A Reason to Be Thankful</h2><p>A little something to celebrate the people, memories, moments and stories that make this family ours.</p></section>
+
+<section class="section" id="thankful"><h2 class="section-heading">A Reason to Be Thankful</h2><p class="section-intro">A few things worth celebrating.</p><div class="gratitude-grid"><article class="entry"><h3>Hyacinth</h3><p>i'm grateful that my surgery went well and that I can walk much better thanking god for healing me in Jesus precious name</p></article>
+<article class="entry"><h3>Marie</h3><p>i am very grateful for life. I'm grateful for family relatives and friends. Especially my daughter.</p></article>
+<article class="entry"><h3>Dwight</h3><p>I'm grateful for a second healthy son.</p></article>
+<article class="entry"><h3>Kianna</h3><p>This year I'm particularly grateful for God's grace and mercy for allowing me to see another Thanksgiving. You know, a lot of kids my age is dying and I'm just grateful that God sees it [fit] to keep me alive.</p></article>
+<article class="entry"><h3>Sherriene</h3><p>Grateful that my dad is alive after being hospitalized for [a] long time.</p></article>
+<article class="entry"><h3>Champhi</h3><p>I am grateful for GRACE and FAVOR</p></article>
+<article class="entry"><h3>Missis</h3><p>[Grateful for] a healthy life.</p></article>
+<article class="entry"><h3>Justin</h3><p>I'm grateful to be able to see God working in my life.</p></article>
+<article class="entry"><h3>Meagan</h3><p>Uuh life. [Not going to lie], I'm grateful that I'm around if I'm being honest. [...] I just appreciate God for all the blessings that I have.</p></article>
+<article class="entry"><h3>Allyyyy</h3><p>Grateful for life &amp; health.</p></article>
+<article class="entry"><h3>Simone</h3><p>I'm grateful for my village because they are my backbone, especially when I needed them the most.</p></article>
+<article class="entry"><h3>Alyssa</h3><p>I'm grateful for the support that my sister and mom has been giving me all these years. They mean so much to me.</p></article></div></section>
+
+<section class="section" id="shoutouts"><h2 class="section-heading">Family Shoutouts</h2><p class="section-intro">Giving credit where credit is due.</p><div class="shoutout-grid"><article class="entry"><h3>Simone</h3><p>I want to give a special shoutout to my village [once again] because throughout the whole year they called to check up on me, let me confide to them, and overall stepping up when I needed them the most.</p></article>
+<article class="entry"><h3>Ally</h3><p>Special recognition to my best friend Trey, always having my back.</p></article>
+<article class="entry"><h3>Dwight</h3><p>Shoutout to everyone that made it to the baby shower.</p></article>
+<article class="entry"><h3>Kianna</h3><p>I wanna give a special recognition shout out to ELijah. i’m super proud of all the things thay’ve accomplished this year. The little things that[may seem ] small to him. I just wanna [shout] him out. He’s doing amazing.</p></article>
+<article class="entry"><h3>Sherriene</h3><p>Shout out to Champhi for being my rock during a difficult time.</p></article>
+<article class="entry"><h3>Missis</h3><p>Shoutout to A'eisha</p></article>
+<article class="entry"><h3>Justin</h3><p>Shoutout to my sister Champhi for being there for me during tough times.</p></article>
+<article class="entry"><h3>Meagan</h3><p>Shoutout to God fr</p></article>
+<article class="entry"><h3>Champhi</h3><p>Myself, for continuing to push forward even when I felt like giving up.</p></article>
+<article class="entry"><h3>Keandra</h3><p>Huge shoutout to God! This year I've attended a couple of my close friends funerals and it really hit home because we're young and just dropping like flies. So I'm just thankful that He saw fit to allow me to still be here in my right mind.</p></article></div></section>
+
+<section class="section" id="moments"><h2 class="section-heading">A Year in Moments</h2><p class="section-intro">The moments, milestones, and little things that made this year memorable.</p><div class="moments-grid"><article class="entry"><h3>Simone</h3><p>my experience from this year made me reevaluate myself and my circle. I learned even the closest person to you can make an impact in life.</p></article>
+<article class="entry"><h3>Meagan</h3><p>Doing my bachelor's degree has been very trying but I'm being held by God and I am very thankful.</p></article>
+<article class="entry"><h3>Justin</h3><p>I've been learning so many new skateboarding tricks in a small amount of time.</p></article>
+<article class="entry"><h3>Sherriene</h3><p>When I won my bank account in court in October.</p></article>
+<article class="entry"><h3>Marie</h3><p>I have been moving forward in my life in a few different ways and I'm taking it one day at a time.</p></article>
+<article class="entry"><h3>Alyssa</h3><p>My biggest accomplishment this year was graduating top 15% of my class and going into college as a sophomore.</p></article>
+<article class="entry"><h3>Ally</h3><p>I did a stay-cation for my bday for the first to relax and enjoy peace and quiet and I enjoyed that. Simple but needed.</p></article>
+<article class="entry"><h3>Dwight</h3><p>I'm proud of myself for successfully smoking a whole chicken on the first try.</p></article>
+<article class="entry"><h3>Kianna</h3><p>My favorite moment this year was truly birthday trip. I felt the most relaxed that I've been in a really long time. I really just allowing myself to be one with God's creation.</p></article>
+<article class="entry"><h3>Shaniya</h3><p>I think my main accomplishment is getting all As on my report card.</p></article>
+<article class="entry"><h3>Kaylani</h3><p>I loved playing with my cousins. That's what I love the most.</p></article></div></section>
+
+<section class="section" id="new-arrivals"><h2 class="section-heading">Our Newest Little Headlines</h2><p class="section-intro">A new little member of the family.</p>
+<div class="baby-card"><img src="images/brawleigh.jpeg" alt="Brawleigh"><h3>Welcome, Brawleigh!</h3><p>Born: October 2026</p></div>
 </section>
 
-<section class="section" id="thankful">
-<h2 class="section-heading">A Reason to Be Thankful</h2>
-<p class="section-intro">A few words of gratitude from the family</p>
-<div class="grid">
-<div class="entry"><h3>Hyacinth</h3><p>I'm grateful that my surgery went well and that I can walk much better. Thanking God for healing me in Jesus' precious name.</p></div>
-<div class="entry"><h3>Marie</h3><p>I am very grateful for life. I'm grateful for family, relatives and friends. Especially my daughter.</p></div>
-<div class="entry"><h3>Dwight</h3><p>I'm grateful for a second healthy son.</p></div>
-<div class="entry"><h3>Kianna</h3><p>This year I'm particularly grateful for God's grace and mercy for allowing me to see another Thanksgiving. You know, a lot of kids my age is dying and I'm just grateful that God sees it fit to keep me alive.</p></div>
-<div class="entry"><h3>Sherriene</h3><p>Grateful that my dad is alive after being hospitalized for a long time.</p></div>
-<div class="entry"><h3>Champhi</h3><p>I am grateful for GRACE and FAVOR.</p></div>
-<div class="entry"><h3>Missis</h3><p>A healthy life.</p></div>
-<div class="entry"><h3>Justin</h3><p>I'm grateful to be able to see God working in my life.</p></div>
-<div class="entry"><h3>Meagan</h3><p>Uuh life. Not going to lie, I'm grateful that I'm around if I'm being honest. I just appreciate God for all the blessings that I have.</p></div>
-<div class="entry"><h3>Allyyyy</h3><p>Grateful for life &amp; health.</p></div>
-<div class="entry"><h3>Simone</h3><p>I'm grateful for my village because they are my backbone, especially when I needed them the most.</p></div>
-<div class="entry"><h3>Alyssa</h3><p>I'm grateful for the support that my sister and mom has been giving me all these years. They mean so much to me.</p></div>
-</div>
+<section class="section" id="album"><h2 class="section-heading">The Family Album</h2><p class="section-intro">A picture is worth a thousand family stories.</p>
+<div class="photo-grid">
+<figure class="photo-card"><div class="photo-pair"><img src="images/Kcoconut.jpeg" alt="Keandra on her trip to the Dominican Republic"><img src="images/keandra.jpeg" alt="Keandra on her trip to the Dominican Republic"></div><figcaption><strong>Keandra</strong><br>“i chose these two pictures to share because this was a very relaxing trip that I took this year to DR. I've been working nonstop and finally had the chance to sit back on somebody's island and really enjoy the fruits of my labor.”<span class="credit">Pictured and submitted by Keandra</span></figcaption></figure>
+<figure class="photo-card"><img src="images/allyyyy.jpeg" alt="Ally"><figcaption><strong>Ally</strong><br>“new beginnings”<span class="credit">Pictured and submitted by Ally</span></figcaption></figure>
+<figure class="photo-card"><img src="images/armani.jpeg" alt="Armani"><figcaption><strong>Armani</strong><br>“Armani's 13th Birthday.”<span class="credit">Pictured: Armani · Submitted by Champhi</span></figcaption></figure>
+<figure class="photo-card"><img src="images/justin.jpeg" alt="Justin"><figcaption><strong>Justin</strong><span class="credit">Pictured and submitted by Justin</span></figcaption></figure>
+<figure class="photo-card"><img src="images/kiannaandazaire.jpeg" alt="Kianna and her nephew Azaire"><figcaption><strong>Kianna &amp; Azaire</strong><br>“My baby first time at church!”<span class="credit">Pictured and submitted by Kianna</span></figcaption></figure>
+<figure class="photo-card"><img src="images/missisandgrand.jpeg" alt="Missis with her grandchildren"><figcaption><strong>Missis and her grandchildren</strong><br>“Missis and her grandchildren after her birthday dinner.”<span class="credit">Pictured: Devin Jr., Azaire, Missis, and Kaylani · Submitted by Missis</span></figcaption></figure>
+<figure class="photo-card"><div class="photo-pair"><img src="images/sher55.1.jpeg" alt="Sherriene at her 55th birthday"><img src="images/sher55.jpeg" alt="Sherriene at her 55th birthday"></div><figcaption><strong>Sherriene</strong><br>“My 55th birthday!”<span class="credit">Pictured and submitted by Sherriene</span></figcaption></figure>
+<figure class="photo-card"><img src="images/simone.jpeg" alt="Simone"><figcaption><strong>Simone</strong><br>“I smiled through it all.”<span class="credit">Pictured and submitted by Simone</span></figcaption></figure>
+<figure class="photo-card"><img src="images/alyssa.jpeg" alt="Alyssa"><figcaption><strong>Alyssa</strong><span class="credit">Pictured and submitted by Alyssa</span></figcaption></figure>
+<figure class="photo-card"><img src="images/dj.jpeg" alt="DJ"><figcaption><strong>DJ</strong><span class="credit">Pictured: DJ · Submitted by Champhi</span></figcaption></figure>
+</div></section>
+
+<section class="section" id="editor"><h2 class="section-heading">From the Editor's Desk</h2><p class="section-intro">A little something to take with you.</p>
+<div class="feature-preview"><div class="eyebrow">A Thanksgiving Reflection</div><h3>Something to Be Grateful For</h3><p>A reflection on gratitude beyond the obvious highlights, and the everyday moments that make up a full life.</p><a class="text-link" href="gratitiude.html">Read the Full Story →</a></div>
 </section>
 
-<section class="section" id="shoutouts">
-<h2 class="section-heading">Shoutouts</h2>
-<p class="section-intro">Giving credit, love, and recognition where it's due</p>
-<div class="grid">
-<div class="entry"><h3>Simone</h3><p>I want to give a special shoutout to my village once again because throughout the whole year they called to check up on me, let me confide to them, and overall stepping up when I needed them the most.</p></div>
-<div class="entry"><h3>Ally</h3><p>Special recognition to my best friend Trey, always having my back.</p></div>
-<div class="entry"><h3>Dwight</h3><p>Shoutout to everyone that made it to the baby shower.</p></div>
-<div class="entry"><h3>Kianna</h3><p>I wanna give a special recognition shout out to Elijah. I'm super proud of all the things they've accomplished this year. The little things that may seem small to him. I just wanna shout him out. He's doing amazing.</p></div>
-<div class="entry"><h3>Sherriene</h3><p>Shout out to Champhi for being my rock during a difficult time.</p></div>
-<div class="entry"><h3>Missis</h3><p>Shoutout to A'eisha.</p></div>
-<div class="entry"><h3>Justin</h3><p>Shoutout to my sister Champhi for being there for me during tough times.</p></div>
-<div class="entry"><h3>Meagan</h3><p>Shoutout to God fr.</p></div>
-<div class="entry"><h3>Champhi</h3><p>Myself, for continuing to push forward even when I felt like giving up.</p></div>
-<div class="entry"><h3>Keandra</h3><p>Huge shoutout to God! This year I've attended a couple of my close friends' funerals and it really hit home because we're young and just dropping like flies. So I'm just thankful that He saw fit to allow me to still be here in my right mind.</p></div>
-</div>
-</section>
+<section class="section" id="entertainment"><h2 class="section-heading">Games &amp; Fun</h2><p class="section-intro">Read all about it. Then prove what you know.</p>
 
-<section class="section" id="moments">
-<h2 class="section-heading">A Year in Moments</h2>
-<p class="section-intro">The little wins, the big milestones, and everything in between</p>
-<div class="grid">
-<div class="entry"><h3>Simone</h3><p>My experience from this year made me reevaluate myself and my circle. I learned even the closest person to you can make an impact in life.</p></div>
-<div class="entry"><h3>Meagan</h3><p>Doing my bachelor's degree has been very trying but I'm being held by God and I am very thankful.</p></div>
-<div class="entry"><h3>Justin</h3><p>I've been learning so many new skateboarding tricks in a small amount of time.</p></div>
-<div class="entry"><h3>Sherriene</h3><p>When I won my bank account in court in October.</p></div>
-<div class="entry"><h3>Marie</h3><p>I have been moving forward in my life in a few different ways and I'm taking it one day at a time.</p></div>
-<div class="entry"><h3>Alyssa</h3><p>My biggest accomplishment this year was graduating top 15% of my class and going into college as a sophomore.</p></div>
-<div class="entry"><h3>Ally</h3><p>I did a stay-cation for my bday for the first time to relax and enjoy peace and quiet and I enjoyed that. Simple but needed.</p></div>
-<div class="entry"><h3>Dwight</h3><p>I'm proud of myself for successfully smoking a whole chicken on the first try.</p></div>
-<div class="entry"><h3>Kianna</h3><p>My favorite moment this year was truly my birthday trip. I felt the most relaxed that I've been in a really long time. I really just allowed myself to be one with God's creation.</p></div>
-<div class="entry"><h3>Shaniya</h3><p>I think my main accomplishment is getting all As on my report card.</p></div>
-<div class="entry"><h3>Kaylani</h3><p>I loved playing with my cousins. That's what I love the most.</p></div>
-</div>
-</section>
+<div class="game-panel" id="crossword"><h3>The Family Crossword</h3><p class="game-help">Fill in the family clues. Use one letter per square. Answers with more than one word have no spaces in the grid.</p>
+<div class="crossword-scroll"><div id="crossword-grid" class="crossword-grid" aria-label="Interactive crossword"></div></div>
+<div class="clue-columns"><div><h4>Across</h4><ol id="across-clues" class="clue-list"></ol></div><div><h4>Down</h4><ol id="down-clues" class="clue-list"></ol></div></div>
+<div class="game-actions"><button class="game-button" id="check-crossword">Check Answers</button><button class="game-button secondary" id="reveal-crossword">Reveal Answers</button><button class="game-button secondary" id="clear-crossword">Clear</button></div><p class="game-message" id="crossword-message" aria-live="polite"></p></div>
 
-<section class="section" id="album">
-<h2 class="section-heading">The Family Album</h2>
-<p class="section-intro">A few moments worth keeping</p>
-<div class="album">
-<figure class="photo"><img src="images/Kcoconut.jpeg" alt="Keandra's trip"><figcaption>“I chose these two pictures to share because this was a very relaxing trip that I took this year to DR. I've been working nonstop and finally had the chance to sit back on somebody's island and really enjoy the fruits of my labor.”</figcaption><div class="credit">Pictured and shared by Keandra</div></figure>
-<figure class="photo"><img src="images/keandra.jpeg" alt="Keandra on vacation"><figcaption>Keandra's relaxing trip to the Dominican Republic.</figcaption><div class="credit">Pictured and shared by Keandra</div></figure>
-<figure class="photo"><img src="images/allyyyy.jpeg" alt="Ally"><figcaption>“new beginnings”</figcaption><div class="credit">Pictured and shared by Ally</div></figure>
-<figure class="photo"><img src="images/armani.jpeg" alt="Armani"><figcaption>“Armani's 13th Birthday.”</figcaption><div class="credit">Pictured: Armani · Shared by Champhi</div></figure>
-<figure class="photo"><img src="images/justin.jpeg" alt="Justin"><div class="credit">Pictured and shared by Justin</div></figure>
-<figure class="photo"><img src="images/kiannaandazaire.jpeg" alt="Kianna and Azaire"><figcaption>“My baby first time at church!”</figcaption><div class="credit">Pictured: Kianna and nephew Azaire · Shared by Kianna</div></figure>
-<figure class="photo"><img src="images/missisandgrand.jpeg" alt="Missis with her grandchildren"><figcaption>“Missis and her grandchildren after her birthday dinner.”</figcaption><div class="credit">Pictured: Devin Jr., Azaire, Missis and Kaylani · Shared by Missis</div></figure>
-<figure class="photo"><img src="images/sher55.1.jpeg" alt="Sherriene's birthday"><figcaption>“My 55th birthday!”</figcaption><div class="credit">Pictured and shared by Sherriene</div></figure>
-<figure class="photo"><img src="images/sher55.jpeg" alt="Sherriene's birthday celebration"><figcaption>“My 55th birthday!”</figcaption><div class="credit">Pictured and shared by Sherriene</div></figure>
-<figure class="photo"><img src="images/simone.jpeg" alt="Simone"><figcaption>“I smiled through it all.”</figcaption><div class="credit">Pictured and shared by Simone</div></figure>
-<figure class="photo"><img src="images/alyssa.jpeg" alt="Alyssa"><div class="credit">Pictured and shared by Alyssa</div></figure>
-<figure class="photo"><img src="images/dj.jpeg" alt="DJ"><div class="credit">Pictured: DJ · Shared by Champhi</div></figure>
-</div>
+<div class="game-panel" id="wordsearch"><h3>Family Name &amp; Place Word Search</h3><p class="game-help">Find all 46 names and places. Words may run across, down, or diagonally, forwards or backwards. Tap a starting letter, then tap the ending letter.</p>
+<div class="wordsearch-scroll"><div id="wordsearch-grid" class="wordsearch-grid" aria-label="Interactive word search"></div></div>
+<div id="word-bank" class="word-bank"></div>
+<div class="game-actions"><button class="game-button secondary" id="reset-wordsearch">Reset Selection</button></div><p class="game-message" id="wordsearch-message" aria-live="polite"></p></div>
 </section>
-
-<section class="section" id="new-arrivals">
-<h2 class="section-heading">New Arrivals</h2>
-<p class="section-intro">A little one has joined the family</p>
-<div class="announcement"><img src="images/brawleigh.jpeg" alt="Baby announcement for Brawleigh"><div><div class="kicker">Welcome to the family</div><h3 style="font:30px 'Playfair Display',serif;margin:8px 0">Brawleigh</h3><p>Born: October 2026</p></div></div>
-</section>
-
-<section class="section" id="games">
-<h2 class="section-heading">Family Games</h2>
-<p class="section-intro">Take a break from the reading and see what you know</p>
-<div class="callout" style="margin-bottom:28px"><h3>Family Crossword</h3><p>Fourteen clues inspired by family sayings, places, food, and memories. Answers are written without spaces or punctuation.</p><ol class="clues">
-<li>Word Sherriene uses a lot, which has rubbed off on others.</li>
-<li>When something is free and you didn't pay for it, it's...</li>
-<li>Matriarch's home country.</li>
-<li>Number of grandchildren of Matriarch's first child.</li>
-<li>Birth month of the youngest aunt.</li>
-<li>Matriarch's pudding.</li>
-<li>“If you don't buy one you won't get one.”</li>
-<li>House where family events are held now.</li>
-<li>Especially good when curried.</li>
-<li>Place where the house in Jamaica is located.</li>
-<li>Place in Jamaica where Mama grew up.</li>
-<li>Flower used to make a holiday drink.</li>
-<li>Tea that made Tanisha throw up.</li>
-<li>Month of the year with no family birthdays.</li>
-</ol><p><strong>Answer key:</strong> SKANK · SLACKNESS · JAMAICA · THREE · JANUARY · SWEETPOTATO · FISH · SETTASHOUSE · GOAT · SPRINGFIELD · DUHANEYPEN · SORREL · CERASEE · MARCH</p></div>
-<div class="callout"><h3>Family Word Search</h3><p>Find the names and places hidden in the letter grid. Tap a starting letter, then tap an ending letter in the same row, column, or diagonal. Words can run in either direction.</p><div class="wordsearch-wrap"><div id="wordsearch" class="wordsearch" aria-label="Word search puzzle"></div></div><ol id="wordbank" class="wordbank"></ol><p id="progress" aria-live="polite">Found 0 of 46 words.</p><button id="reset-search" type="button">Reset word search</button></div>
-</section>
-
-<section class="section" id="editor">
-<h2 class="section-heading">From the Editor</h2>
-<div class="editor-note"><p>This edition is a reminder that there are stories, milestones, memories, and everyday moments worth sharing. Thank you to everyone who contributed a thought, a photo, a shoutout, or a little piece of their year.</p><p>And for this year's reflection on gratitude, take a moment to read the full essay.</p><p><a class="essay-link" href="gratitude.html">Read “Something to Be Grateful For” →</a></p></div>
-</section>
-<footer><div>The Turkey Day Times · Thanksgiving Edition 2026</div><a class="essay-link" href="#top">Back to top ↑</a></footer>
+<footer>THE TURKEY DAY TIMES • THANKSGIVING 2026<br><a class="back-top" href="#top">Back to the top ↑</a></footer>
 </main>
+
 <script>
-(() => {
-const words = ["LUCETTA","MALACHI","AEISHA","AZAIRE","CHARMAIN","RACHEL","SIMONE","ELETHEA","LAVERN","LILLIA","KIANNA","TANISHA","HYACINTH","CLAUDE","JERMAINE","SHANIYA","ZAMARIA","ALYSSA","ALAYNA","NATHAN","KEANDRA","DEVIN","GLENROY","DAVE","MICHAEL","DANIEL","DWIGHT","CHAMPHIONA","ARMANI","JUSTIN","ELIJAH","KAYLANI","PRINCE","BRAWLEIGH","BAYLEIGH","BRYLEIGH","NAKAI","SPRINGFIELD","DUHANEYPEN","JAMAICA","MIAMI","JACKSONVILLE","RIVERVIEW","GIBSONTON","MIRAMAR","FORTLAUDERDALE"];
-const size=22, grid=Array.from({length:size},()=>Array(size).fill(""));
-const dirs=[[0,1],[1,0],[0,-1],[-1,0],[1,1],[1,-1],[-1,1],[-1,-1]];
-function place(word){
- for(let tries=0;tries<500;tries++){
-  const [dr,dc]=dirs[Math.floor(Math.random()*dirs.length)];
-  const r=Math.floor(Math.random()*size),c=Math.floor(Math.random()*size);
-  const er=r+dr*(word.length-1),ec=c+dc*(word.length-1);
-  if(er<0||er>=size||ec<0||ec>=size)continue;
-  let ok=true;for(let i=0;i<word.length;i++){const x=grid[r+dr*i][c+dc*i];if(x&&x!==word[i]){ok=false;break;}}
-  if(!ok)continue;
-  for(let i=0;i<word.length;i++)grid[r+dr*i][c+dc*i]=word[i];
-  return true;
- }
- return false;
-}
-[...words].sort((a,b)=>b.length-a.length).forEach(place);
-const letters="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-for(let r=0;r<size;r++)for(let c=0;c<size;c++)if(!grid[r][c])grid[r][c]=letters[Math.floor(Math.random()*26)];
-const puzzle=document.getElementById("wordsearch"),bank=document.getElementById("wordbank"),progress=document.getElementById("progress");
-const found=new Set();let start=null;
-const cells=[];
-grid.forEach((row,r)=>row.forEach((ch,c)=>{
- const el=document.createElement("button");el.type="button";el.className="letter";el.textContent=ch;el.setAttribute("aria-label",`Row ${r+1}, column ${c+1}, ${ch}`);
- el.addEventListener("click",()=>choose(r,c,el));puzzle.appendChild(el);cells.push(el);
+const crosswordCells = [[null, null, null, null, "S", "P", "R", "I", "N", "G", "F", "I", "E", "L", "D", null, null, null], [null, null, null, null, null, null, null, null, null, "O", null, null, null, null, "U", null, null, null], [null, null, null, null, null, null, null, null, null, "A", null, "F", "I", "S", "H", null, null, null], [null, null, null, null, null, null, null, null, null, "T", null, null, null, null, "A", null, null, null], [null, "C", "E", "R", "A", "S", "E", "E", null, null, null, null, null, null, "N", null, null, null], [null, null, null, null, null, "O", null, null, "S", "L", "A", "C", "K", "N", "E", "S", "S", null], ["J", "A", "N", "U", "A", "R", "Y", null, null, null, null, null, null, null, "Y", null, "K", null], [null, null, null, null, null, "R", null, null, null, null, "T", null, null, null, "P", null, "A", null], [null, null, null, null, "S", "E", "T", "T", "A", "S", "H", "O", "U", "S", "E", null, "N", null], [null, null, null, null, null, "L", null, null, null, null, "R", null, null, null, "N", null, "K", null], [null, null, null, null, null, null, null, null, null, null, "E", null, null, null, null, "M", null, null], [null, null, null, null, null, null, null, "S", "W", "E", "E", "T", "P", "O", "T", "A", "T", "O"], [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "R", null, null], [null, null, null, null, null, null, null, null, null, null, "J", "A", "M", "A", "I", "C", "A", null], [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, "H", null, null]];
+const crosswordEntries = [{"number": 1, "answer": "SPRINGFIELD", "row": 0, "col": 4, "direction": "across", "clue": "The name of the place where the house in Jamaica is located."}, {"number": 2, "answer": "GOAT", "row": 0, "col": 9, "direction": "down", "clue": "This is good, especially when it's curried."}, {"number": 3, "answer": "DUHANEYPEN", "row": 0, "col": 14, "direction": "down", "clue": "The place in Jamaica where Mama grew up."}, {"number": 4, "answer": "FISH", "row": 2, "col": 11, "direction": "across", "clue": "If you don't buy one, you won't get one."}, {"number": 5, "answer": "CERASEE", "row": 4, "col": 1, "direction": "across", "clue": "The tea that made Tanisha throw up."}, {"number": 6, "answer": "SORREL", "row": 4, "col": 5, "direction": "down", "clue": "This flower is used to make a holiday drink."}, {"number": 7, "answer": "SLACKNESS", "row": 5, "col": 8, "direction": "across", "clue": "When something is free and you didn't pay for it, it's..."}, {"number": 8, "answer": "SKANK", "row": 5, "col": 16, "direction": "down", "clue": "A word Sherriene uses a lot, which has rubbed off on others."}, {"number": 9, "answer": "JANUARY", "row": 6, "col": 0, "direction": "across", "clue": "The birth month of the youngest aunt."}, {"number": 10, "answer": "THREE", "row": 7, "col": 10, "direction": "down", "clue": "The number of grandchildren of Matriarch's first child."}, {"number": 11, "answer": "SETTASHOUSE", "row": 8, "col": 4, "direction": "across", "clue": "The house where family events are held now."}, {"number": 12, "answer": "MARCH", "row": 10, "col": 15, "direction": "down", "clue": "The month of the year with no family birthdays."}, {"number": 13, "answer": "SWEETPOTATO", "row": 11, "col": 7, "direction": "across", "clue": "Matriarch's pudding."}, {"number": 14, "answer": "JAMAICA", "row": 13, "col": 10, "direction": "across", "clue": "Matriarch's home country."}];
+const cellNumbers = {"0,4": 1, "0,9": 2, "0,14": 3, "2,11": 4, "4,1": 5, "4,5": 6, "5,8": 7, "5,16": 8, "6,0": 9, "7,10": 10, "8,4": 11, "10,15": 12, "11,7": 13, "13,10": 14};
+const crosswordGrid = document.getElementById('crossword-grid');
+crosswordGrid.style.gridTemplateColumns = `repeat(${crosswordCells[0].length}, 29px)`;
+const crosswordInputs = {};
+crosswordCells.forEach((row,r)=>row.forEach((letter,c)=>{
+  const cell=document.createElement('div');
+  if(letter===null){cell.className='crossword-cell block';}
+  else{
+    cell.className='crossword-cell';
+    const n=cellNumbers[`${r},${c}`];
+    if(n){const label=document.createElement('span');label.className='cell-number';label.textContent=n;cell.appendChild(label);}
+    const input=document.createElement('input');
+    input.maxLength=1;input.autocomplete='off';input.spellcheck=false;
+    input.setAttribute('aria-label',`Row ${r+1}, column ${c+1}`);
+    input.dataset.row=r;input.dataset.col=c;
+    input.addEventListener('input',()=>{input.value=input.value.toUpperCase().replace(/[^A-Z]/g,'').slice(-1);});
+    input.addEventListener('keydown',e=>{
+      const moves={ArrowRight:[0,1],ArrowLeft:[0,-1],ArrowDown:[1,0],ArrowUp:[-1,0]};
+      if(moves[e.key]){e.preventDefault();let [dr,dc]=moves[e.key],rr=r+dr,cc=c+dc;while(rr>=0&&cc>=0&&rr<crosswordCells.length&&cc<crosswordCells[0].length){const next=crosswordInputs[`${rr},${cc}`];if(next){next.focus();break;}rr+=dr;cc+=dc;}}
+    });
+    cell.appendChild(input);crosswordInputs[`${r},${c}`]=input;
+  }
+  crosswordGrid.appendChild(cell);
 }));
-const items=new Map();words.forEach(w=>{const li=document.createElement("li");li.textContent=w;bank.appendChild(li);items.set(w,li);});
-function choose(r,c,el){
- if(!start){start={r,c};el.classList.add("selected");return;}
- const dr=Math.sign(r-start.r),dc=Math.sign(c-start.c),steps=Math.max(Math.abs(r-start.r),Math.abs(c-start.c));
- if(steps===0){el.classList.remove("selected");start=null;return;}
- if(!(r===start.r||c===start.c||Math.abs(r-start.r)===Math.abs(c-start.c))){clearSelection();return;}
- let picked="";const coords=[];
- for(let i=0;i<=steps;i++){const rr=start.r+dr*i,cc=start.c+dc*i;picked+=grid[rr][cc];coords.push([rr,cc]);}
- const reverse=picked.split("").reverse().join("");const match=words.find(w=>w===picked||w===reverse);
- if(match&&!found.has(match)){found.add(match);coords.forEach(([rr,cc])=>cells[rr*size+cc].classList.add("found"));items.get(match).classList.add("found");}
- clearSelection();progress.textContent=`Found ${found.size} of ${words.length} words.`;
+function renderClues(direction,id){
+ const list=document.getElementById(id);
+ crosswordEntries.filter(e=>e.direction===direction).forEach(e=>{
+   const li=document.createElement('li');li.value=e.number;li.textContent=e.clue;list.appendChild(li);
+ });
 }
-function clearSelection(){cells.forEach(x=>x.classList.remove("selected"));start=null;}
-document.getElementById("reset-search").addEventListener("click",()=>location.reload());
-})();
+renderClues('across','across-clues');renderClues('down','down-clues');
+function cellCoords(entry){const coords=[];for(let i=0;i<entry.answer.length;i++)coords.push(entry.direction==='across'?[entry.row,entry.col+i]:[entry.row+i,entry.col]);return coords;}
+document.getElementById('check-crossword').addEventListener('click',()=>{
+ let correct=0,filled=0;
+ crosswordEntries.forEach(e=>{let answer='';cellCoords(e).forEach(([r,c])=>answer+=(crosswordInputs[`${r},${c}`].value||''));if(answer)filled++;if(answer===e.answer)correct++;});
+ const msg=document.getElementById('crossword-message');
+ msg.textContent=correct===crosswordEntries.length?'You solved the family crossword! Well done!':`${correct} of ${crosswordEntries.length} answers correct. Keep going!`;
+});
+document.getElementById('reveal-crossword').addEventListener('click',()=>{
+ crosswordEntries.forEach(e=>cellCoords(e).forEach(([r,c],i)=>crosswordInputs[`${r},${c}`].value=e.answer[i]));
+ document.getElementById('crossword-message').textContent='The answers have been revealed.';
+});
+document.getElementById('clear-crossword').addEventListener('click',()=>{
+ Object.values(crosswordInputs).forEach(i=>i.value='');
+ document.getElementById('crossword-message').textContent='';
+});
+
+const wsLetters=[["S", "P", "R", "I", "N", "G", "F", "I", "E", "L", "D", "K", "E", "A", "N", "D", "R", "A", "I", "I", "L", "Z"], ["S", "E", "Q", "C", "H", "A", "M", "P", "H", "I", "O", "N", "A", "K", "A", "J", "R", "A", "C", "H", "E", "L"], ["B", "E", "A", "J", "F", "O", "R", "T", "L", "A", "U", "D", "E", "R", "D", "A", "L", "E", "Q", "Y", "O", "Z"], ["M", "S", "H", "A", "N", "I", "Y", "A", "P", "M", "X", "T", "Q", "R", "I", "V", "E", "R", "V", "I", "E", "W"], ["U", "N", "G", "K", "G", "Z", "F", "D", "J", "E", "R", "M", "A", "I", "N", "E", "L", "E", "I", "N", "A", "D"], ["G", "P", "K", "A", "Y", "L", "A", "N", "I", "U", "M", "G", "X", "C", "T", "A", "N", "I", "S", "H", "A", "N"], ["M", "F", "T", "N", "M", "A", "L", "A", "Y", "N", "A", "P", "D", "J", "A", "M", "A", "I", "C", "A", "O", "B"], ["P", "I", "C", "H", "A", "R", "M", "A", "I", "N", "Y", "N", "S", "Y", "D", "L", "U", "C", "E", "T", "T", "A"], ["H", "Y", "A", "C", "I", "N", "T", "H", "B", "J", "A", "C", "K", "S", "O", "N", "V", "I", "L", "L", "E", "P"], ["G", "R", "L", "M", "P", "N", "A", "T", "H", "A", "N", "F", "V", "B", "R", "A", "W", "L", "E", "I", "G", "H"], ["N", "E", "X", "O", "I", "Z", "D", "U", "H", "A", "N", "E", "Y", "P", "E", "N", "V", "K", "B", "I", "M", "M"], ["A", "L", "Q", "U", "K", "S", "G", "I", "B", "S", "O", "N", "T", "O", "N", "C", "A", "C", "E", "R", "I", "H"], ["K", "V", "B", "R", "Y", "L", "E", "I", "G", "H", "E", "C", "N", "I", "R", "P", "Y", "N", "R", "Q", "C", "G"], ["A", "A", "Z", "A", "I", "R", "E", "B", "O", "E", "L", "E", "T", "H", "E", "A", "A", "L", "Y", "S", "S", "A"], ["I", "B", "A", "K", "O", "J", "U", "S", "T", "I", "N", "J", "V", "B", "A", "Y", "L", "E", "I", "G", "H", "P"], ["M", "G", "Z", "M", "K", "I", "A", "N", "N", "A", "H", "X", "G", "M", "A", "L", "A", "C", "H", "I", "O", "Y"], ["A", "E", "I", "S", "H", "A", "I", "G", "L", "L", "E", "V", "A", "D", "G", "L", "E", "N", "R", "O", "Y", "I"], ["A", "L", "A", "M", "I", "C", "H", "A", "E", "L", "V", "Z", "A", "M", "A", "R", "I", "A", "P", "K", "S", "M"], ["V", "V", "A", "X", "E", "U", "D", "W", "I", "G", "H", "T", "H", "A", "J", "I", "L", "E", "G", "W", "H", "G"], ["L", "I", "L", "L", "I", "A", "Y", "I", "N", "A", "M", "R", "A", "R", "M", "I", "R", "A", "M", "A", "R", "M"], ["E", "B", "D", "E", "V", "I", "N", "U", "S", "G", "X", "B", "L", "A", "V", "E", "R", "N", "U", "L", "B", "U"], ["N", "S", "I", "M", "O", "N", "E", "P", "L", "T", "J", "C", "L", "A", "U", "D", "E", "G", "Z", "Y", "C", "J"]];
+const wsWords=["LUCETTA", "MALACHI", "AEISHA", "AZAIRE", "CHARMAIN", "RACHEL", "SIMONE", "ELETHEA", "LAVERN", "LILLIA", "KIANNA", "TANISHA", "HYACINTH", "CLAUDE", "JERMAINE", "SHANIYA", "ZAMARIA", "ALYSSA", "ALAYNA", "NATHAN", "KEANDRA", "DEVIN", "GLENROY", "DAVE", "MICHAEL", "DANIEL", "DWIGHT", "CHAMPHIONA", "ARMANI", "JUSTIN", "ELIJAH", "KAYLANI", "PRINCE", "BRAWLEIGH", "BAYLEIGH", "BRYLEIGH", "NAKAI", "SPRINGFIELD", "DUHANEYPEN", "JAMAICA", "MIAMI", "JACKSONVILLE", "RIVERVIEW", "GIBSONTON", "MIRAMAR", "FORTLAUDERDALE"];
+const wsContainer=document.getElementById('wordsearch-grid');
+const wordBank=document.getElementById('word-bank');
+let wsStart=null;let foundWords=new Set();let foundCells=new Set();
+const wsButtons=[];
+wsLetters.forEach((row,r)=>row.forEach((letter,c)=>{
+ const b=document.createElement('button');b.type='button';b.className='ws-cell';b.textContent=letter;b.dataset.r=r;b.dataset.c=c;
+ b.addEventListener('click',()=>selectWordCell(r,c,b));wsContainer.appendChild(b);wsButtons.push(b);
+}));
+wsWords.slice().sort().forEach(w=>{const chip=document.createElement('span');chip.className='word-chip';chip.textContent=w;chip.id='word-'+w;wordBank.appendChild(chip);});
+function selectWordCell(r,c,button){
+ if(!wsStart){wsStart=[r,c];document.querySelectorAll('.ws-cell.selected').forEach(x=>x.classList.remove('selected'));button.classList.add('selected');document.getElementById('wordsearch-message').textContent='Now tap the last letter of the word.';return;}
+ const [r0,c0]=wsStart;const dr=r-r0,dc=c-c0;
+ const straight=(dr===0||dc===0||Math.abs(dr)===Math.abs(dc));
+ if(!straight||(!dr&&!dc)){wsStart=[r,c];document.querySelectorAll('.ws-cell.selected').forEach(x=>x.classList.remove('selected'));button.classList.add('selected');return;}
+ const steps=Math.max(Math.abs(dr),Math.abs(dc)),sr=Math.sign(dr),sc=Math.sign(dc);
+ let candidate='';const coords=[];
+ for(let i=0;i<=steps;i++){const rr=r0+sr*i,cc=c0+sc*i;candidate+=wsLetters[rr][cc];coords.push([rr,cc]);}
+ const reverse=candidate.split('').reverse().join('');
+ const match=wsWords.find(w=>!foundWords.has(w)&&(w===candidate||w===reverse));
+ if(match){
+  foundWords.add(match);coords.forEach(([rr,cc])=>{const cell=wsButtons.find(x=>Number(x.dataset.r)===rr&&Number(x.dataset.c)===cc);if(cell)cell.classList.add('found');});
+  document.getElementById('word-'+match).classList.add('found');
+  document.getElementById('wordsearch-message').textContent=foundWords.size===wsWords.length?'You found every family name and place!':'Found '+match+'! '+foundWords.size+' of '+wsWords.length+' found.';
+ }else{document.getElementById('wordsearch-message').textContent='That line is not one of the remaining words. Try again.';}
+ wsStart=null;document.querySelectorAll('.ws-cell.selected').forEach(x=>x.classList.remove('selected'));
+}
+document.getElementById('reset-wordsearch').addEventListener('click',()=>{wsStart=null;document.querySelectorAll('.ws-cell.selected').forEach(x=>x.classList.remove('selected'));document.getElementById('wordsearch-message').textContent='Selection cleared. Words already found remain marked.';});
 </script>
-</body>
-</html>
+</body></html>
